@@ -28,7 +28,24 @@ public class ArrayTest {
         int right = high;
 
         while (left < right) {
-//            while ()
+            while (left < right && left <= high) {
+                if (a[left] > pivot) {
+                    break;
+                }
+                left++;
+            }
+            while (left <= right && right > low) {
+                if (a[right] <= pivot) {
+                    break;
+                }
+                right--;
+            }
+            if (left < right) {
+//                swap(a, right, left);
+            }
+//            swap(a, low, right);
+            sort(a, low, right);
+            sort(a, right + 1, high);
         }
 
     }

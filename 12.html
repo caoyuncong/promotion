@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        #box {
+            width: 700px;
+            height: 320px;
+            background: #000;
+            overflow: hidden;
+            margin: 40px auto;
+        }
+
+        #con {
+            width: 2100px;
+            height: 320px;
+        }
+
+        #con img {
+            width: 700px;
+            height: 320px;
+            float: left;
+        }
+
+
+        button{
+            margin-top: 60px;
+            width: 100px;
+            height: 30px;
+        }
+
+    </style>
+</head>
+<body>
+<div id="box">
+    <div id="con">
+        <img src="css/1.jpg" alt="">
+        <img src="css/2.jpg" alt="">
+        <img src="css/3.jpg" alt="">
+        <!--<img src="css/4.jpg" alt="">-->
+        <!--<img src="css/5.jpg" alt="">-->
+        <!--<img src="css/6.jpg" alt="">-->
+        <!--<img src="css/7.jpg" alt="">-->
+        <!--<img src="css/8.jpg" alt="">-->
+
+    </div>
+
+</div>
+<div id="dd">
+    <button id="btn1">开始</button>
+    <button id="btn2">结束</button>
+
+</div>
+<script>
+    var con = document.getElementById('con');
+    function auto() {
+        // 获取ul的marginLeft
+        // parseInt
+        var cLeft=parseInt(con.style.marginLeft);
+        if (!cLeft) {
+            cLeft = 0;
+        }
+        if (cLeft>-1400) {
+            con.style.marginLeft = cLeft - 1 + 'px'; // px加''
+        }else {
+            con.style.marginLeft = 0;
+        }
+    }
+    btn1.onclick=function () {
+        btn1.disabled = 'disabled';
+        s1=setInterval(auto, 30); // 定时器
+    }
+    btn2.onclick = function () {
+        clearInterval(s1); // 清除定时器
+        btn1.disabled = '';
+    };
+</script>
+</body>
+</html>

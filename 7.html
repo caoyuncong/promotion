@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/style7.css">
+</head>
+<body>
+<div id="box">
+    <img src="css/1.jpg" alt="">
+    <img src="css/2.jpg" alt="">
+    <img src="css/3.jpg" alt="">
+    <img src="css/4.jpg" alt="">
+    <img src="css/5.jpg" alt="">
+    <img src="css/6.jpg" alt="">
+    <img src="css/7.jpg" alt="">
+    <img src="css/8.jpg" alt="">
+    <img src="css/9.jpg" alt="">
+    <img src="css/10.jpg" alt="">
+    <span id="left">
+        <
+    </span>
+    <span id="right">
+        >
+    </span>
+    <script>
+        var imgs = document.getElementById('box').getElementsByTagName('img'), //所有的图片
+            left = document.getElementById('left'), // 左按钮
+            right = document.getElementById('right'); // 右按钮
+        //点击右按钮时 下标加一
+        //如果到最后一张 则到第一张
+        var i = 0;
+        right.onclick = function () {
+            //找到所有的图片 让它隐藏
+            for (var j = 0; j < imgs.length; j++) {
+                imgs[j].style.display = 'none'; // 逐一隐藏
+            }
+            i++; //1 2 3 4 5 6 7 8 9
+            if (i>imgs.length-1) {
+                i = 0;
+            }
+            imgs[i].style.display = 'block'; // 显示
+//            console.log(imgs[i]);
+
+        }
+
+        //点击左按钮时 下标减一
+        //如果减到第一张 则到最后一张
+        left.onclick = function () {
+            //找到所有的图片 让它隐藏
+            for (var j = 0; j < imgs.length; j++) {
+                imgs[j].style.display = 'none'; // 逐一隐藏
+            }
+            i--;
+            if (i<0) {
+                i = imgs.length - 1;
+            }
+            imgs[i].style.display = 'block'; // 显示
+        }
+    </script>
+</div>
+</body>
+</html>

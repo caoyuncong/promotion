@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/style14.css">
+</head>
+<body>
+<div id="box">
+    <ul id="imgs">
+        <li><img src="css/1.jpg" alt=""></li>
+        <li><img src="css/2.jpg" alt=""></li>
+        <li><img src="css/3.jpg" alt=""></li>
+        <li><img src="css/4.jpg" alt=""></li>
+        <li><img src="css/5.jpg" alt=""></li>
+        <li><img src="css/6.jpg" alt=""></li>
+        <li><img src="css/7.jpg" alt=""></li>
+        <li><img src="css/8.jpg" alt=""></li>
+        <li><img src="css/9.jpg" alt=""></li>
+        <li><img src="css/10.jpg" alt=""></li>
+    </ul>
+    <ol id="num">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+    </ol>
+    <span id="left">
+        <
+    </span>
+    <span id="right">
+        >
+    </span>
+</div>
+<script>
+    var imgs = document.getElementById('imgs').getElementsByTagName('li'),
+        nums = document.getElementById('num').getElementsByTagName('li');
+    // 自动播
+    var k=0; // 初始值
+    function auto() {
+        for(var i=0;i<nums.length;i++) {
+            imgs[i].style.display = 'none';
+            nums[i].style.background = 'none';
+        }
+        imgs[k].style.display = 'block';
+        nums[k].style.background = 'red';
+        k++;
+        if (k>nums.length-1) {
+            k = 0;
+        }
+    }
+    s1 = setInterval(auto, 1000);
+    // 划过出现对应的图片
+    for(var i=0;i<nums.length;i++) {
+        nums[i].index = i;
+        nums[i].onmouseover = function () {
+            // 鼠标划过数字的时候，让所有的图片隐藏,让数字的背景清空
+            for(var j=0;j<imgs.length;j++) {
+                imgs[j].style.display = 'none';
+                nums[j].style.background = 'none';
+            }
+            nums[this.index].style.background = 'green';
+            imgs[this.index].style.display = 'block';
+        }
+        nums[i].onmouseout=function () {
+            k = this.index;
+            s1 = setInterval(auto, 1000);
+        }
+    }
+
+
+</script>
+
+</body>
+</html>

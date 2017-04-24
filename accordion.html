@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        #box {
+            width: 280px;
+            height: auto;
+            margin: 40px auto;
+        }
+
+        #box>p {
+            height: 38px;
+        }
+
+        #box>p img {
+            height: 38px;
+        }
+
+        #box h3 {
+            height: 42px;
+            line-height: 42px;
+            background: #fafafa;
+            font-weight: normal;
+            font-size: 20px;
+        }
+
+        #box h3 img {
+            float: left;
+            margin: 10px 8px 0 8px;
+        }
+
+        #box dl {
+            height: 146px;
+            display: none;
+        }
+
+        #box dl dt {
+            float: left;
+            margin-top: 20px;
+        }
+
+        #box dl dd {
+            float: right;
+            width: 176px;
+            margin-top: 24px;
+            line-height: 28px;
+        }
+        
+        #box dl dd span {
+            color: #f00;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <p><img src="https://github.com/suny6555/javascript/blob/master/codepackage/shoufegqin/img/toptitle.png?raw=true" alt=""></p>
+    <h3>苹果 iPhone 6 Plus <img src="https://github.com/suny6555/javascript/blob/master/codepackage/shoufegqin/img/tea1.jpg?raw=true"></h3>
+    <dl style="display: block">
+        <dt><img src="https://github.com/suny6555/javascript/blob/master/codepackage/shoufegqin/img/shouji_buttom1.jpg?raw=true" alt=""></dt>
+        <dd>
+            <p>价格：<span>￥3565</span></p>
+            <p>hi,how are you </p>
+        </dd>
+    </dl>
+
+    <h3>苹果 iPhone 6 Plus <img src="https://github.com/suny6555/javascript/blob/master/codepackage/shoufegqin/img/tea2.jpg?raw=true"></h3>
+    <dl>
+        <dt><img src="https://github.com/suny6555/javascript/blob/master/codepackage/shoufegqin/img/shouji_buttom2.jpg?raw=true" alt=""></dt>
+        <dd>
+            <p>价格：<span>￥3565</span></p>
+            <p>hi,how are you </p>
+        </dd>
+    </dl>
+
+    <h3>苹果 iPhone 6 Plus <img src="https://github.com/suny6555/javascript/blob/master/codepackage/shoufegqin/img/tea3.jpg?raw=true"></h3>
+    <dl>
+        <dt><img src="https://github.com/suny6555/javascript/blob/master/codepackage/shoufegqin/img/shouji_buttom3.jpg?raw=true" alt=""></dt>
+        <dd>
+            <p>价格：<span>￥3565</span></p>
+            <p>hi,how are you </p>
+        </dd>
+    </dl>
+
+    <h3>苹果 iPhone 6 Plus <img src="https://github.com/suny6555/javascript/blob/master/codepackage/shoufegqin/img/tea4.jpg?raw=true"></h3>
+    <dl>
+        <dt><img src="https://github.com/suny6555/javascript/blob/master/codepackage/shoufegqin/img/shouji_buttom4.jpg?raw=true" alt=""></dt>
+        <dd>
+            <p>价格：<span>￥3565</span></p>
+            <p>hi,how are you </p>
+        </dd>
+    </dl>
+
+    <h3>苹果 iPhone 6 Plus <img src="https://github.com/suny6555/javascript/blob/master/codepackage/shoufegqin/img/tea5.jpg?raw=true"></h3>
+    <dl>
+        <dt><img src="https://github.com/suny6555/javascript/blob/master/codepackage/shoufegqin/img/shouji_buttom5.jpg?raw=true" alt=""></dt>
+        <dd>
+            <p>价格：<span>￥3565</span></p>
+            <p>hi,how are you </p>
+        </dd>
+    </dl>
+</div>
+<script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+<script>
+    $('h3').click(function () {
+        $('h3').next().hide();
+        $(this).next().show('height:146px');
+    })
+</script>
+</body>
+</html>

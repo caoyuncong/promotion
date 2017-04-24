@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+<div id="box">
+    <ul>
+        <li style="background: white">Tab1</li>
+        <li>Tab2</li>
+        <li>Tab3</li>
+    </ul>
+    <div id="context">
+            <p style="display: block">
+                你的心就像一颗红色石头，有着热情的血液和冰冷的心
+                你的心就像一颗红色石头，有着热情的血液和冰冷的心
+                你的心就像一颗红色石头，有着热情的血液和冰冷的心
+                你的心就像一颗红色石头，有着热情的血液和冰冷的心
+                你的心就像一颗红色石头，有着热情的血液和冰冷的心
+                你的心就像一颗红色石头，有着热情的血液和冰冷的心
+                你的心就像一颗红色石头，有着热情的血液和冰冷的心
+                你的心就像一颗红色石头，有着热情的血液和冰冷的心
+            </p>
+
+            <p>
+                你的心就像一颗红色石头，有着热情的血液和冰冷的心
+                你的心就像一颗红色石头，有着热情的血液和冰冷的心
+                你的心就像一颗红色石头，有着热情的血液和冰冷的心
+            </p>
+
+            <p>
+                你的心就像一颗红色石头，有着热情的血液和冰冷的心
+                你的心就像一颗红色石头，有着热情的血液和冰冷的心
+                你的心就像一颗红色石头，有着热情的血液和冰冷的心
+                你的心就像一颗红色石头，有着热情的血液和冰冷的心
+            </p>
+
+    </div>
+</div>
+<script>
+    var lis = document.getElementById('box').getElementsByTagName('li'),
+        context = document.getElementById('context').getElementsByTagName('p');
+    for (var i = 0; i < lis.length; i++) {
+        lis[i].index = i;
+        lis[i].onclick = function () {
+            for (var j = 0; j < context.length; j++) {
+                context[j].style.display = 'none';
+                lis[j].style.background = '';
+            }
+
+            context[this.index].style.display = 'block';
+            lis[this.index].style.background = 'white';
+        }
+    }
+</script>
+</body>
+</html>

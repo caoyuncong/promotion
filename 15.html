@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        #box {
+            width: 256px;
+            height: auto;
+            margin: 40px auto;
+        }
+
+        #box ul {
+            width: 256px;
+            height: auto;
+        }
+
+        #box ul li {
+            width: 256px;
+            height: 320px;
+            position: relative;
+            border: 2px solid #cccccc;
+        }
+
+        #box ul li p {
+            width: 256px;
+            height: 50px;
+            line-height: 50px;
+            color: #fff;
+            background: rgba(153, 0, 255,0.6);
+            opacity: 0.4;
+            left: 0;
+            position: absolute;
+            bottom: 20px;
+            text-align: center;
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+<div id="box">
+    <ul id="imgs">
+        <li><img src="https://cdn2.iconfinder.com/data/icons/cute-bear/284/cute_bear-05-256.png" alt=""><p>I love you</p></li>
+        <li><img src="https://cdn4.iconfinder.com/data/icons/panda-emojis/512/panda_Artboard_3_copy_27-22-256.png" alt=""><p>I love you</p></li>
+        <li><img src="https://cdn4.iconfinder.com/data/icons/panda-emojis/512/panda-13-256.png" alt=""><p>I love you</p></li>
+        <li><img src="https://cdn4.iconfinder.com/data/icons/panda-emojis/512/panda-26-256.png" alt=""><p>I love you</p></li>
+        <li><img src="https://cdn4.iconfinder.com/data/icons/panda-emojis/512/panda-31-256.png" alt=""><p>I love you</p></li>
+
+    </ul>
+
+</div>
+<script>
+    var lis = document.getElementsByTagName('ul')[0].getElementsByTagName('li');
+    //划过每个li的时候
+    //1、让li加边框 离开时 边框消失
+    for (var i=0;i<lis.length;i++) {
+        //每个li添加划过事件
+        lis[i].onmouseover = function () {
+            this.style.border = '2px solid red';
+            this.getElementsByTagName('p')[0].style.display = 'block';
+            this.getElementsByTagName('p')[0].style.color = 'purple';
+        }
+        lis[i].onmouseout = function () {
+            this.style.border = '2px solid #ccc';
+            this.getElementsByTagName('p')[0].style.display = 'none';
+            this.getElementsByTagName('p')[0].style.color = '#fff';
+        }
+
+    }
+</script>
+</body>
+</html>

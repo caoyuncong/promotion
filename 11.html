@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        #box {
+            width: 700px;
+            height: 400px;
+            background: rosybrown;
+            overflow: hidden;
+        }
+
+        #box ul {
+            float: left;
+        }
+        #box li {
+            width: 200px;
+            height: 99px;
+            background: gray;
+            border-bottom: 1px solid yellow;
+            color: white;
+            text-align: center;
+            line-height: 100px;
+        }
+        #context {
+            float: right;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <ul>
+        <li>美食</li>
+        <li>娱乐</li>
+        <li>购物</li>
+        <li>旅游</li>
+    </ul>
+<div id="content">
+    <dl>
+        <dt><img src="https://cdn1.iconfinder.com/data/icons/splash-of-fruit/128/fruiticons_buttons_grape-128.png" alt=""></dt>
+        <dd></dd>
+    </dl>
+    <dl>
+        <dt><img src="https://cdn3.iconfinder.com/data/icons/rubber-icons/128/games.png" alt=""></dt>
+        <dd></dd>
+    </dl>
+    <dl>
+        <dt><img src="https://cdn2.iconfinder.com/data/icons/snipicons/500/shopping-cart-128.png" alt=""></dt>
+        <dd></dd>
+    </dl>
+    <dl>
+        <dt><img src="https://cdn1.iconfinder.com/data/icons/my--icons-by-itzikgur/128/Travel_-__Airplane.png" alt=""></dt>
+        <dd></dd>
+    </dl>
+
+</div>
+</div>
+<script>
+    var lis=document.getElementById('box').getElementsByTagName('li'),
+        content=document.getElementById('content').getElementsByTagName('dt');
+    for(var i=0;i<lis.length;i++) {
+        lis[i].index = i;
+        lis[i].onclick = function () {
+            for(var j=0;j<content.length;j++) {
+                content[j].style.display = 'none';
+                lis[j].style.background = '';
+            }
+            content[this.index].style.display = 'block';
+            lis[this.index].style.background = 'green';
+        }
+    }
+</script>
+</body>
+</html>

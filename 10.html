@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        #box {
+            width: 700px;
+            height: 320px;
+            margin: 20px auto;
+        }
+
+        #box p {
+            height: 320px;
+        }
+
+        #box button {
+            margin-left: 30px;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <p id="con"></p>
+    <button id="btn1">开始</button>
+    <button id="btn2">结束</button>
+</div>
+<script>
+    var arr = ['<img src="https://cdn1.iconfinder.com/data/icons/flat-christmas-icons-1/75/_elf-128.png">', '<img src="css/2.jpg">', '<img src="css/3.jpg">', '<img src="css/4.jpg">', '<img src="css/5.jpg">','<img src="css/6.jpg">'];
+    var con = document.getElementById('con'),
+        btn1 = document.getElementById('btn1'),
+        btn2 = document.getElementById('btn2');
+    var i = 0;
+    function aa() {
+        con.innerHTML = arr[i];
+        i++;
+        if (i>arr.length-1) {
+            i = 0;
+        }
+    }
+    btn1.onclick=function () {
+        btn1.disabled = 'disabled';
+        s1=setInterval(aa, 1000); // 定时器
+    }
+    btn2.onclick = function () {
+        clearInterval(s1); // 清除定时器
+        btn1.disabled = '';
+    };
+</script>
+</body>
+</html>
